@@ -1,0 +1,21 @@
+{
+  "name": "web2day2016-ssl-simple-gratuit-avec-lets-encrypt",
+  "homepage": "http://blog.dlecan.com/web2day2016-ssl-simple-gratuit-avec-lets-encrypt",
+  "authors": [
+    "Damien Lecan <dev@dlecan.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ruban": "^0.3.2"
+  }
+}
