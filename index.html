@@ -1,27 +1,185 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Web2day 2016 - Du SSL simple et gratuit pour tous avec Let's Encrypt</title>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" />
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="bower_components/highlightjs/styles/tomorrow.css" />
-  <link rel="stylesheet" href="bower_components/ruban/css/ruban.min.css" />
-  <link rel="stylesheet" href="bower_components/ruban/css/ruban-print.min.css" media="print" />
-</head>
+  <head>
+    <title>Web2day 2016 - SSL/TLS simple et gratuit pour tous avec Let's Encrypt</title>
+    <meta charset="utf-8">
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
 
-<body>
-  <section>
-    <h1>SSL simple et gratuit</h1>
-  </section>
+      body {
+        font-family: 'Ubuntu', 'Calibri', sans-serif;
+      }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        font-weight: normal;
+      }
+      .remark-code {
+        font-size: 20px;
+      }
+      .remark-inline-code {
+        font-size: 40px;
+      }
+      .remark-slide-content {
+        font-size: 40px;
+        padding-top: 0;
+        padding-right: 3em;
+        padding-left: 3em;
+      }
+      .remark-slide-content h1 {
+        font-size: 100px;
+        margin-top: 0;
+      }
+      .remark-slide-content h2 {
+        font-size: 70px;
+      }
+      .remark-slide-content li {
+        margin-top: 0.4em;
+        margin-bottom: 0.5em;
+        font-size: 50px;
+      }
+      .remark-slide-content a, #slide-menu a {
+        color: inherit;
+      }
+      .remark-slide-number {
+        visibility: hidden;
+      }
+      #slide-menu a {
+        text-decoration: none;
+      }
+      .dlecan { font-family: Yanone Kaffeesatz, Georgia, serif; }
+      .dlecan p { color: #a09583; font-size: 55px }
+      .dlecan h1 { font-family: Yanone Kaffeesatz, Georgia, serif; color: #fff; }
+      .footnote {
+        position: absolute;
+        bottom: 0.5em;
+        font-size: 70%;
+      }
+      .red    { color: #FF4943; }
+      .dark-gray   { color: #787878; }
+      .gray   { color: #ADADAD; }
+      .green  { color: #8ABA3D; }
+      .blue   { color: #15aaff; }
+      .yellow { color: #F7F41E; }
+      .white  { color: white;   }
+      .black  { color: black;   }
+      .orange { color: #f79c37; }
+      .bg-yellow { background-color: #F7F41E; }
+      .bg-red    { background-color: #FF4943; }
+      .bg-black, .dlecan    { background-color: black; }
+      .bg-blue { background-color: #15aaff; }
+      .bg-orange { background-color: #f79c37; }
+      .bg-gray { background-color: #787878; }
+      .blockquote {
+        background: #f9f9f9;
+        border-left: 10px solid #ccc;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+        width: 75%;
+      }
+      .blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+      }
+      .blockquote p {
+        display: inline;
+      }
+      .pull-left {
+        float: left;
+        width: 49%;
+      }
+      .pull-right {
+        float: right;
+        width: 49%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      .large {
+        font-size: 120%;
+      }
+      .x-large {
+        font-size: 300%;
+      }
+      .small {
+        font-size: 50%;
+      }
+      .title {
+        font-size: 120%;
+      }
+      .float-right {
+        position: absolute;
+        right: -2em;
+      }
+      .float-left, .logo img {
+        position: absolute;
+        left: 1em;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 0.3em;
+        padding-left: 0.3em;
+        padding-right: 0.3em;
+        border: 2px solid black;
+      }
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.5); }
+        100% { transform: scale(1); }
+      }
+      .pulse {
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
 
-  <script src="bower_components/jquery/jquery.min.js"></script>
-  <script src="bower_components/keymaster/keymaster.js"></script>
-  <script src="bower_components/hammerjs/hammer.min.js"></script>
-  <script src="bower_components/highlightjs/highlight.pack.js"></script>
-  <script src="bower_components/ruban/js/ruban.min.js"></script>
-  <script>
-    new Ruban();
-  </script>
-</body>
+class: center, middle, white, bg-black
+
+# SSL (TLS) simple et gratuit
+
+.gray.large[<i class="fa fa-twitter fa-fw"></i>[@dlecan](https://twitter.com/dlecan) - #web2day]
+
+---
+
+class: dlecan, center, middle
+
+Par
+
+# Damien Lecan
+
+<i class="fa fa-heart red fa-lg fa-fw"></i>Open Source - Web
+
+Développeur &amp; CTO @.red[[SQLI](http://www.sqli.com)]
+
+---
+
+# Introduction
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      remark.macros.scale = function (percentage) {
+        var url = this;
+        return '<img src="' + url + '" style="width: ' + percentage + '" />';
+      };
+      var slideshow = remark.create({
+        ratio: '16:9',
+        countIncrementalSlides: true
+      });
+    </script>
+  </body>
 </html>
