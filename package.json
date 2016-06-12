@@ -1,0 +1,13 @@
+{
+  "author": "Damien Lecan",
+  "name": "web2day2016-ssl-simple-gratuit-avec-lets-encrypt",
+  "version": "1.0.0",
+  "homepage": "http://github.com/dlecan/web2day2016-ssl-simple-gratuit-avec-lets-encrypt",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
