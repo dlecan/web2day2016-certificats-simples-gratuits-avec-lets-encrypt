@@ -105,6 +105,9 @@
       .large {
         font-size: 120%;
       }
+      .s-large {
+        font-size: 150%;
+      }
       .m-large {
         font-size: 200%;
       }
@@ -238,12 +241,12 @@ Paramétrage des certificats et clé privée
 --
 &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check-square-o large green"></i>
 
---
+---
+class: center, middle
 
-Renouvellement 3 ans plus tard ?
+.m-large[Renouvellement du certificat ?]
 
---
-&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-times large red"></i>
+<i class="fa fa-times x-large red"></i>
 
 ---
 class: center, middle
@@ -253,18 +256,16 @@ class: center, middle
 .m-large[Gratuit, automatisé, ouvert]
 
 ---
-# <i>LE</i> + protocole ACME + [Certbot](https://certbot.eff.org/)
+# AC + protocole ACME + [Certbot](https://certbot.eff.org/)
 
 --
 
-- Délivrer ou renouveller des certificats X509
-- Configurer des serveurs Web (Apache)
+- Délivrer ou renouveller des certificats
+- Configurer des serveurs Web
 
---
+<br/>
 
-Le tout :
-- Automatiquement et gratuitement
-- Serveurs <u>d'accès public uniquement</u>
+.green.s-large.center[Automatiquement et gratuitement]
 
 ---
 class: center, middle, bg-black, white
@@ -280,7 +281,18 @@ background-image: url(resources/le-sponsors.png)
 # Sponsors
 
 ---
-.center[![:scale 80%](resources/le-juin-2016.png)]
+class: center, middle
+<div class="figure">
+  <iframe width="900" height="650" frameborder="0" scrolling="no" src="https://plot.ly/~letsencrypt/7.embed"></iframe>
+</div>
+
+---
+# Limites
+
+- Seul Apache est vraiment supporté
+  - Nombreux efforts de la communauté
+
+- Serveurs <u>d'accès public uniquement</u>
 
 ---
 # Conclusion
