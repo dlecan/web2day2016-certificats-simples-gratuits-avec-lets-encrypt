@@ -24,7 +24,8 @@ module.exports = function ( grunt ) {
           keepalive: false,
           base: ['.'],
           livereload: true,
-          hostname: 'localhost'
+          hostname: 'localhost',
+          port: 9000
         }
       }
     }
