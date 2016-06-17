@@ -156,7 +156,7 @@
     <textarea id="source">
 class: center, middle, white, bg-black
 
-# SSL (TLS) simple et gratuit
+# Du SSL simple et gratuit
 
 .gray.large[<i class="fa fa-twitter fa-fw"></i>[@dlecan](https://twitter.com/dlecan) - #web2day]
 
@@ -229,31 +229,27 @@ Réception certificat X.509
 
 --
 
-Configuration des paramètres TLS
+Configuration TLS + X509 + clé privée
 
 --
 &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check-square-o large green"></i>
 
 --
 
-Paramétrage des certificats et clé privée
-
---
-&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check-square-o large green"></i>
+.large.green[It works!]
 
 ---
 class: center, middle
+![expiration](resources/cert_expiration.png)
 
-.m-large[Renouvellement du certificat ?]
-
-<i class="fa fa-times x-large red"></i>
+.large.red[Renouvellement du certificat ?]
 
 ---
 class: center, middle
 
 ![LE](resources/letsencrypt-logo-horizontal.png)
 
-.m-large[Gratuit, automatisé, ouvert]
+.s-large[Gratuit, automatisé, ouvert]
 
 ---
 # AC + protocole ACME + [Certbot](https://certbot.eff.org/)
@@ -261,9 +257,11 @@ class: center, middle
 --
 
 - Délivrer ou renouveller des certificats
+  - Type <i/>DV</i> + extension SAN
+
 - Configurer des serveurs Web
 
-<br/>
+--
 
 .green.s-large.center[Automatiquement et gratuitement]
 
@@ -287,7 +285,7 @@ class: center, middle
 </div>
 
 ---
-# Limites
+# Limites majeures
 
 - Seul Apache est vraiment supporté
   - Nombreux efforts de la communauté
